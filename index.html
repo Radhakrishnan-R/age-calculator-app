@@ -20,7 +20,8 @@
         input.max = new Date().toISOString().split("T")[0];
         
         function calculateAge(){
-           let birthDate = new Date(input.value);
+            if(input.value.length > 0){
+                let birthDate = new Date(input.value);
 
            let y1 = birthDate.getFullYear();
            let m1 = birthDate.getMonth();
@@ -53,12 +54,18 @@
            document.querySelector(".result").innerHTML = `You're ${y3} years, ${m3} months and ${d3} days old!`;
            console.log(`You're ${y3} years, ${m3} months and ${d3} days old!`);
 
-        }
+        
 
         function getDayInMonth(year,month){
             return new Date(year, month, 0).getDate();
         }
+        
 
+            }else{
+                alert("Select DOB")
+            }
+        }
+        
 
     </script>
 </body>
